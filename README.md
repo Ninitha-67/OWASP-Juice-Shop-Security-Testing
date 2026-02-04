@@ -17,6 +17,14 @@ This project demonstrates security testing of the OWASP Juice Shop vulnerable we
 - Application: OWASP Juice Shop (Dockerized)
 - Network: Host-Only / NAT
 
+## How to Run (Lab Setup)
+Target (Ubuntu):
+- docker pull bkimminich/juice-shop
+- docker run -d --name juice -p 3000:3000 bkimminich/juice-shop
+
+Attacker (Kali):
+- Open http://<ubuntu-ip>:3000
+
 ## Vulnerabilities Tested
 - Authentication Bypass
 - SQL Injection
