@@ -1,5 +1,9 @@
-# OWASP-Juice-Shop-Security-Testing
-Security assessment of OWASP Juice Shop using Kali Linux and Docker (Educational Purpose)
+# # Securing a Vulnerable Web Application (OWASP Juice Shop)
+
+This project demonstrates the complete lifecycle of securing a deliberately vulnerable web application:
+**Deployment → Vulnerability Identification → Root Cause Analysis → Mitigation Recommendations → Validation (Re-testing)**
+
+⚠️ Educational use only. Tested in an isolated lab environment.
 
 ## Project Overview
 This project demonstrates security testing of the OWASP Juice Shop vulnerable web application in a controlled lab environment using Kali Linux and Docker.
