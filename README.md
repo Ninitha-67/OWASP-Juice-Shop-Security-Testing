@@ -1,7 +1,7 @@
 # # Securing a Vulnerable Web Application (OWASP Juice Shop)
 
 This project demonstrates the complete lifecycle of securing a deliberately vulnerable web application:
-**Deployment → Vulnerability Identification → Root Cause Analysis → Mitigation Recommendations → Validation (Re-testing)**
+**Deployment → Vulnerability Assessment → Security Hardening → Validation**
 
 ⚠️ Educational use only. Tested in an isolated lab environment.
 
@@ -24,9 +24,9 @@ This project demonstrates security testing of the OWASP Juice Shop vulnerable we
 ## How to Run (Local Lab)
 
 ### Target (Ubuntu)
-sudo apt update
-sudo apt install docker.io -y
-sudo docker run -d --name juice -p 3000:3000 bkimminich/juice-shop
+- sudo apt update
+- sudo apt install docker.io -y
+- sudo docker run -d --name juice -p 3000:3000 bkimminich/juice-shop
 
 ### Access (Kali Browser)
 Attacker (Kali):
