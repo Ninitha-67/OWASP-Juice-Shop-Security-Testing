@@ -1,4 +1,4 @@
-# # Securing a Vulnerable Web Application (OWASP Juice Shop)
+## Securing a Vulnerable Web Application (OWASP Juice Shop)
 
 This project demonstrates the complete lifecycle of securing a deliberately vulnerable web application:
 **Deployment → Vulnerability Assessment → Security Hardening → Validation**
