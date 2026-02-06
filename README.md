@@ -32,7 +32,7 @@ sudo docker run -d --name juice -p 3000:3000 bkimminich/juice-shop
 http://<ubuntu-hostonly-ip>:3000
 
 Attacker (Kali):
-- Open[ [http://<ubuntu-ip>:3000]](http://<Ubuntu-IP>:3000)
+- Open http://<Ubuntu-IP>:3000
 ## Vulnerabilities Tested
 - Authentication Bypass
 - SQL Injection
