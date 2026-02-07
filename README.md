@@ -154,3 +154,8 @@ This project demonstrates a structured approach to web application security test
 - OWASP Top 10  
 - OWASP Juice Shop Documentation  
 - OWASP Testing Guide  
+
+---
+
+## 📜 License
+This project is licensed under the MIT License.
