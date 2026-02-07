@@ -3,25 +3,30 @@
 
 ---
 
-## 📌 Introduction
-Web application security is a critical component of modern cybersecurity. A significant number of real-world security breaches occur due to insecure application logic, weak authentication mechanisms, improper access control, and misconfigurations.
+## 📌 Quick Summary
+This project demonstrates a practical web application security assessment conducted on OWASP Juice Shop in a controlled lab environment. The objective was to identify common web vulnerabilities, analyze their impact, and apply or propose appropriate security mitigations aligned with OWASP Top 10 standards.
 
-OWASP Juice Shop is an intentionally vulnerable web application designed to demonstrate common security flaws listed in the OWASP Top 10. This project simulates a real-world penetration testing scenario in a controlled environment to identify, analyze, and mitigate web application vulnerabilities in an ethical manner.
+---
+
+## 📖 Introduction
+Web application security is a critical domain in cybersecurity, as many real-world breaches occur due to insecure coding practices, broken authentication mechanisms, improper access control, and security misconfigurations.
+
+OWASP Juice Shop is an intentionally vulnerable web application developed to showcase common security flaws. This project simulates a real-world penetration testing and hardening workflow in a safe and ethical environment for educational purposes.
 
 ---
 
 ## 🎯 Objectives
 - Understand common web application vulnerabilities  
-- Deploy a vulnerable web application in a secure lab environment  
-- Perform ethical security testing using industry-standard tools  
-- Map identified vulnerabilities to OWASP Top 10 categories  
-- Apply appropriate security fixes and configurations  
-- Validate mitigation effectiveness through retesting  
-- Document findings and security recommendations  
+- Deploy OWASP Juice Shop in a controlled lab environment  
+- Perform ethical vulnerability assessment  
+- Map findings to OWASP Top 10  
+- Apply or propose security mitigations  
+- Validate fixes through retesting  
+- Document findings in a structured manner  
 
 ---
 
-## 🛠️ Tools & Technologies Used
+## 🛠️ Tools & Technologies
 - OWASP Juice Shop  
 - Docker  
 - Kali Linux  
@@ -29,36 +34,32 @@ OWASP Juice Shop is an intentionally vulnerable web application designed to demo
 - VirtualBox  
 - Burp Suite  
 - Nmap  
-- Web Browser (Firefox / Chrome)  
+- Web Browser (Firefox / Chrome)
 
 ---
 
 ## 🧪 Environment Setup
 - **Host OS:** Windows  
-- **Guest OS:**
-  - Ubuntu (Target Server)
-  - Kali Linux (Attacker Machine)
+- **Guest OS:**  
+  - Ubuntu (Target Server)  
+  - Kali Linux (Attacker Machine)  
 - **Deployment Method:** Docker Container  
 - **Network Configuration:** Host-Only / Internal Network  
 
 ---
 
 ## ⚙️ Methodology
-This project follows a structured and ethical security testing methodology:
-
-1. Deployment of OWASP Juice Shop in an isolated environment  
-2. Initial reconnaissance and application mapping  
-3. Identification of vulnerabilities using manual and tool-based testing  
-4. Controlled exploitation of vulnerabilities for validation  
-5. Implementation of security fixes and hardening measures  
-6. Retesting to ensure vulnerabilities are mitigated  
-7. Documentation of findings and recommendations  
+1. Deployment of OWASP Juice Shop in an isolated lab  
+2. Application reconnaissance and mapping  
+3. Vulnerability identification using manual and tool-based testing  
+4. Controlled exploitation for validation  
+5. Security hardening and mitigation planning  
+6. Retesting to confirm vulnerability mitigation  
+7. Documentation and reporting  
 
 ---
 
 ## 🛑 Vulnerabilities Identified
-The following vulnerabilities were identified during the assessment:
-
 - SQL Injection  
 - Cross-Site Scripting (XSS)  
 - Broken Authentication  
@@ -66,113 +67,80 @@ The following vulnerabilities were identified during the assessment:
 - Security Misconfiguration  
 - Sensitive Data Exposure  
 
-All findings were mapped to relevant **OWASP Top 10** categories.
+All vulnerabilities were mapped to the **OWASP Top 10** framework.
+
+---
+
+## 📊 Findings Summary
+
+| Vulnerability | OWASP Top 10 Category | Impact | Mitigation | Retest Status |
+|--------------|----------------------|--------|------------|---------------|
+| SQL Injection | Injection | Data compromise | Parameterized queries | Not reproducible |
+| XSS | XSS | Script execution | Input sanitization, CSP | Blocked |
+| Broken Auth | Identification & Auth | Account takeover | Strong auth policies | Improved |
+| Access Control | Broken Access Control | Privilege escalation | RBAC enforcement | Prevented |
+| Misconfiguration | Security Misconfiguration | Info disclosure | Hardening configs | Reduced |
+| Data Exposure | Sensitive Data Exposure | Data leakage | HTTPS, secrets mgmt | Secured |
 
 ---
 
 ## 🛠️ Security Fixes & Mitigations
 
-### 1. SQL Injection
-**Issue:**  
-Improper input handling allowed malicious SQL queries.
+### SQL Injection
+- **Fix:** Server-side validation and prepared statements  
+- **Result:** Injection attempts blocked  
 
-**Fix Applied:**  
-- Implemented server-side input validation  
-- Used parameterized queries and prepared statements  
+### Cross-Site Scripting (XSS)
+- **Fix:** Output encoding and Content Security Policy  
+- **Result:** Script execution prevented  
 
-**Outcome:**  
-SQL injection attempts were successfully blocked.
+### Broken Authentication
+- **Fix:** Strong password policy and secure sessions  
+- **Result:** Reduced unauthorized access  
 
----
+### Broken Access Control
+- **Fix:** Role-based access control  
+- **Result:** Unauthorized access prevented  
 
-### 2. Cross-Site Scripting (XSS)
-**Issue:**  
-User-supplied input was rendered without sanitization.
+### Security Misconfiguration
+- **Fix:** Disabled debug mode, hardened configurations  
+- **Result:** Reduced information leakage  
 
-**Fix Applied:**  
-- Input validation and output encoding  
-- Applied Content Security Policy (CSP)  
-
-**Outcome:**  
-Injected scripts were neutralized.
-
----
-
-### 3. Broken Authentication
-**Issue:**  
-Weak password policies and improper session handling.
-
-**Fix Applied:**  
-- Enforced strong password policies  
-- Implemented secure session management  
-
-**Outcome:**  
-Unauthorized access attempts were reduced.
-
----
-
-### 4. Broken Access Control
-**Issue:**  
-Restricted resources were accessible without proper authorization.
-
-**Fix Applied:**  
-- Implemented role-based access control (RBAC)  
-- Enforced server-side authorization checks  
-
-**Outcome:**  
-Unauthorized resource access was prevented.
-
----
-
-### 5. Security Misconfiguration
-**Issue:**  
-Default configurations and verbose error messages exposed system details.
-
-**Fix Applied:**  
-- Disabled debug modes  
-- Hardened server and container configurations  
-
-**Outcome:**  
-Information leakage was minimized.
-
----
-
-### 6. Sensitive Data Exposure
-**Issue:**  
-Sensitive information was transmitted without proper protection.
-
-**Fix Applied:**  
-- Enforced HTTPS  
-- Secured credentials and secrets  
-
-**Outcome:**  
-Data confidentiality and integrity were improved.
+### Sensitive Data Exposure
+- **Fix:** HTTPS enforcement and credential protection  
+- **Result:** Improved confidentiality  
 
 ---
 
 ## 🔁 Validation & Retesting
-All applied security fixes were validated by retesting the previously exploited vulnerabilities.  
-Post-mitigation testing confirmed that vulnerabilities were no longer reproducible.
+All identified vulnerabilities were re-tested after mitigation. Previously exploitable issues were no longer reproducible or were significantly reduced.
 
 ---
 
 ## 📄 Documentation
-- Detailed vulnerability analysis and mitigation steps are documented in the **Project Report PDF**  
-- Findings include impact assessment and security recommendations  
+📄 **Full Project Report:**  
+`Project-Report/OWASP_Juice_Shop_Security_Report.pdf`
 
 ---
 
-## ⚠️ Ethical Disclaimer
-This project was conducted strictly for **educational and ethical purposes** within a controlled laboratory environment. No real-world systems were targeted or harmed.
+## ⚠️ Scope & Limitations
+- Testing was limited to OWASP Juice Shop in a local lab  
+- No real-world or production systems were targeted  
+- This project focuses on educational security assessment only  
+
+---
+
+## ⚖️ Ethical Disclaimer
+This project was conducted strictly for educational and ethical purposes in a controlled environment. Unauthorized testing on real-world systems is strictly prohibited.
+
+---
+
+## 🏁 Conclusion
+This project demonstrates a structured approach to web application security testing, vulnerability analysis, and mitigation. It highlights the importance of proactive security assessments and secure application design aligned with industry best practices.
 
 ---
 
 ## 📚 References
 - OWASP Top 10  
-- OWASP Juice Shop Official Documentation  
+- OWASP Juice Shop Documentation  
 - OWASP Testing Guide  
-
----
-
-## 🏁 Conclusion
-This project demonstrates practical knowledge of web application security testing, vulnerability assessment, and mitigation aligned with industry best practices. It emphasizes the importance of secure application design and proactive security assessments.
